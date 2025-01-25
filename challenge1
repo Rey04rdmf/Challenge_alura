@@ -1,0 +1,23 @@
+// Función para elegir el amigo secreto de forma aleatoria
+function elegirAmigoSecreto() {
+  // Pedimos al usuario que ingrese los nombres separados por comas
+  let nombres = prompt("Indique sus amigos (separados por comas):");
+
+  // Convertimos la cadena de texto en un array de nombres
+  let listaDeNombres = nombres.split(",").map(nombre => nombre.trim());
+
+  // Validamos que la lista no esté vacía
+  if (listaDeNombres.length === 0) {
+    alert("Por favor, ingrese al menos un nombre.");
+    return;
+  }
+
+  // Elegimos un nombre aleatorio de la lista
+  let amigoSecreto = listaDeNombres[Math.floor(Math.random() * listaDeNombres.length)];
+
+  // Mostramos el resultado
+  alert("Tu amigo secreto elegido es: " + amigoSecreto);
+}
+
+// Llamamos a la función para ejecutar el código
+elegirAmigoSecreto();
